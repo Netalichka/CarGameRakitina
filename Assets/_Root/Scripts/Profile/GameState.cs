@@ -4,6 +4,8 @@ namespace Profile
     {
         None,
         Start,
-        Game
+        Game,
+        Settings
+
     }
 }
