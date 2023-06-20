@@ -10,10 +10,10 @@ namespace Ui
         [SerializeField] private Button _buttonSetting;
 
 
-        public void Init(UnityAction startGame, UnityAction openSettings)
+        public void Init(UnityAction StartGame, UnityAction OpenSettings)
         {
-            _buttonStart.onClick.AddListener(startGame);
-            _buttonSetting.onClick.AddListener(openSettings);
+            _buttonStart.onClick.AddListener(StartGame);
+            _buttonSetting.onClick.AddListener(OpenSettings);
         }
            
 
