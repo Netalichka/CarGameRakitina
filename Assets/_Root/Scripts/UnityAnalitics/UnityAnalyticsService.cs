@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnityAnalyticsService : MonoBehaviour
+namespace Tool.Analytics
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+
+    public class UnityAnalyticsService : IAnalyticsService
     {
-        
+        public void SendEvent(string eventName) =>
+            UnityEngine.Analytics.Analytics.CustomEvent(eventName);
+        public void SendEvent(string eventName, Dictionary<string, object> eventData) =>
+            UnityEngine.Analytics.Analytics.CustomEvent(eventName, eventData);
     }
 }
