@@ -18,12 +18,14 @@ internal class EntryPoint : MonoBehaviour
         var profilePlayer = new ProfilePlayer(SpeedCar, InitialState);
         _mainController = new MainController(_placeForUi, profilePlayer);
 
+        Analytics.CustomEvent("MainMenuOpened");
 
-        Analytics.CustomEvent("MainMenuOpened", new Dictionary<string, object>()
-        {
-            ["speed"] = 5,
-            ["player_name"] = "Jack"
-        });
+
+        //Analytics.CustomEvent("MainMenuOpened", new Dictionary<string, object>()
+        //{
+         //   ["speed"] = 5,
+         //   ["player_name"] = "Jack"
+       // });
     }
 
     private void OnDestroy()

@@ -1,6 +1,7 @@
 using Profile;
 using Tool;
 using UnityEngine;
+using UnityEngine.Analytics;
 using Object = UnityEngine.Object;
 
 namespace Ui
@@ -17,7 +18,9 @@ namespace Ui
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
             _view.Init(StartGame, OpenSetting);
-            
+
+            Analytics.CustomEvent("MainMenuOpened");
+
         }
 
         private MainMenuView LoadView(Transform placeForUi)

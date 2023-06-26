@@ -2,6 +2,7 @@ using Game.Car;
 using Game.InputLogic;
 using Game.TapeBackground;
 using Profile;
+using UnityEngine.Analytics;
 using Tool;
 
 namespace Game
@@ -21,6 +22,8 @@ namespace Game
 
             var carController = new CarController();
             AddController(carController);
+
+            Analytics.CustomEvent("MainMenuOpened");
         }
     }
 }
