@@ -1,5 +1,7 @@
 using Profile;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 internal class EntryPoint : MonoBehaviour
 {
@@ -15,6 +17,13 @@ internal class EntryPoint : MonoBehaviour
     {
         var profilePlayer = new ProfilePlayer(SpeedCar, InitialState);
         _mainController = new MainController(_placeForUi, profilePlayer);
+
+
+        Analytics.CustomEvent("MainMenuOpened", new Dictionary<string, object>()
+        {
+            ["speed"] = 5,
+            ["player_name"] = "Jack"
+        });
     }
 
     private void OnDestroy()
