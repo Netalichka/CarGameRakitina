@@ -23,7 +23,7 @@ namespace Game
             var carController = new CarController();
             AddController(carController);
 
-            Analytics.CustomEvent("MainMenuOpened");
+            Analytics.CustomEvent("GameStarted");
         }
     }
 }
